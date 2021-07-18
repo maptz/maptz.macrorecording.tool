@@ -1,0 +1,19 @@
+﻿<Window x:Class="Maptz.MacroRecording.Tool.StatusWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Maptz.MacroRecording.Tool"
+        mc:Ignorable="d"
+        Title="StatusWindow" Height="90" Width="150" WindowStyle="None">
+    <Window.Resources>
+        <local:BoolVisibilityConverter x:Key="BoolVisibilityConverter"></local:BoolVisibilityConverter>
+    </Window.Resources>
+    <Grid x:Name="x_Grid">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="Playing"  Visibility="{Binding Path=IsPlaying, Converter={StaticResource BoolVisibilityConverter}}" FontSize="30"></TextBlock>
+            <TextBlock Text="Recording" Visibility="{Binding IsRecording, Converter={StaticResource BoolVisibilityConverter}}" FontSize="30"></TextBlock>
+        </StackPanel>
+        
+    </Grid>
+</Window>
